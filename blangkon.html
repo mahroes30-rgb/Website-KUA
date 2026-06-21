@@ -515,7 +515,34 @@ RESPONSIVE
 /* =========================
    RESPONSIVE
 ========================= */
+.mobile-dropdown-btn{
+    width:100%;
+    background:none;
+    border:none;
+    padding:15px;
+    text-align:left;
 
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:15px;
+    cursor:pointer;
+}
+
+.mobile-dropdown-content{
+    display:none;
+    background:#f8f8f8;
+}
+
+.mobile-dropdown-content a{
+    display:block;
+    padding:12px 25px;
+}
+
+.mobile-dropdown.active .mobile-dropdown-content{
+    display:block;
+}
 @media(max-width:768px){
 
     body{
@@ -703,13 +730,66 @@ RESPONSIVE
 
 <div class="mobile-menu" id="mobileMenu">
 
-    <a href="#">Beranda</a>
-    <a href="#">Profil</a>
-    <a href="#">Layanan</a>
-    <a href="#">Kontak</a>
+    <a href="../index.html">Beranda</a>
+
+    <!-- Tentang Kami -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Tentang Kami
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="../profil/profil kua.html">Profil</a>
+            <a href="../profil/sejarah kua.html">Sejarah KUA</a>
+            <a href="../profil/struktur organisasi.html">Struktur Organisasi</a>
+            <a href="../profil/tugas dan fungsi.html">Tugas & Fungsi</a>
+        </div>
+
+    </div>
+
+    <!-- Layanan -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Layanan
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="../layanan/syarat daftar nikah.html">Daftar Nikah</a>
+            <a href="../layanan/wakaf.html">Wakaf</a>
+            <a href="../layanan/isbat nikah.html">Isbat Nikah</a>
+            <a href="../layanan/wali nikah.html">Wali Nikah</a>
+            <a href="../layanan/duplikat buku nikah.html">Duplikat Buku Nikah</a>
+            <a href="../layanan/taukil bil kitabah.html">Taukil Bil Kitabah</a>
+            <a href="../layanan/rekomendasi nikah.html">Rekomendasi Nikah</a>
+            <a href="../layanan/pengumuman nikah.html">Pengumuman Nikah</a>
+        </div>
+
+    </div>
+
+    <a href="../blangkon.html">Blangko N</a>
+
+    <!-- Sarana -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Sarana Keagamaan
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="data ponpes.html">Data Ponpes</a>
+            <a href="data madrasah.html">Data Madrasah</a>
+            <a href="data musholla.html">Data Musholla</a>
+            <a href="data masjid.html">Data Masjid</a>
+        </div>
+
+    </div>
 
 </div>
-
 <div class="search-popup" id="searchPopup">
 
     <div class="search-box">
@@ -944,6 +1024,17 @@ window.addEventListener("scroll", function(){
 
 });
 </script>
+<script>
+document.querySelectorAll('.mobile-dropdown-btn')
+.forEach(btn => {
 
+    btn.addEventListener('click', () => {
+
+        btn.parentElement.classList.toggle('active');
+
+    });
+
+});
+</script>
 </body>
 </html>
