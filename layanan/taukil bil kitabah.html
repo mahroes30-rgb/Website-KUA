@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KUA Warungpring</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f6f7;
+    padding-top:90px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:95%;
+    max-width:1300px;
+
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    border-radius:20px;
+
+    padding:12px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:9999;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+     transition: .3s;
+}
+.navbar.scrolled{
+    top: 1px;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:45px;
+}
+
+.logo h3{
+    font-size:11px;
+}
+
+.logo h1{
+    font-size:24px;
+    color:#0a7b3f;
+    line-height:1;
+}
+
+.logo p{
+    font-size:11px;
+    color:#666;
+}
+
+/* =========================
+   NAV MENU
+========================= */
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#0a7b3f;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:45px;
+    left:0;
+
+    min-width:220px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:10px;
+
+    display:flex;
+    flex-direction:column;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+}
+
+.dropdown-menu a{
+    padding:10px 12px;
+    border-radius:10px;
+}
+
+.dropdown-menu a:hover{
+    background:#eef7ee;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* =========================
+   RIGHT MENU
+========================= */
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.search-btn{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#f3f3f3;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#e9e9e9;
+}
+
+.contact-btn{
+
+    background:#0a7b3f;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.contact-btn:hover{
+    background:#086633;
+}
+
+/* =========================
+   SEARCH POPUP
+========================= */
+
+.search-popup{
+
+    display:none;
+
+    position:fixed;
+
+    top:90px;
+    right:30px;
+
+    z-index:99999;
+}
+
+.search-box{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+
+    width:250px;
+
+    padding:10px 15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+}
+
+.search-box button{
+
+    background:#0a7b3f;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-toggle{
+    display:none;
+
+    border:none;
+    background:none;
+
+    font-size:24px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu{
+
+    display:none;
+
+    position:fixed;
+
+    top:80px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:95%;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+    z-index:999;
+}
+
+.mobile-menu a{
+
+    display:block;
+
+    padding:15px;
+
+    text-decoration:none;
+
+    color:#222;
+
+    border-bottom:1px solid #eee;
+}
+
+.mobile-menu.show{
+    display:block;
+}
+
+/* =========================
+   DEMO CONTENT
+========================= */
+
+main{
+    min-height:600px;
+    width:95%;
+    margin:auto;
+}
+
+/* =========================
+   FOOTER DESKTOP
+========================= */
+
+.footer{
+
+    background:#0a7b3f;
+
+    color:white;
+
+    margin-top:80px;
+}
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:40px;
+
+    padding:40px 20px;
+}
+
+.footer-logo img{
+    width:60px;
+    margin-bottom:10px;
+}
+
+.footer-menu a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-bottom:10px;
+}
+
+.footer-contact p{
+    margin-bottom:10px;
+}
+
+.copyright{
+
+    text-align:center;
+
+    padding:15px;
+
+    border-top:1px solid rgba(255,255,255,.2);
+}
+
+/* =========================
+   FOOTER MOBILE
+========================= */
+
+.footer-mobile{
+    display:none;
+}
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title{
+    text-align:center;
+    margin:40px 0;
+}
+
+.page-title h2{
+    font-size:38px;
+    font-weight:700;
+}
+
+.title-line{
+    width:90px;
+    height:4px;
+
+    background:#0a7b3f;
+
+    margin:15px auto 0;
+
+    border-radius:20px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.taukil-container{
+
+    width:95%;
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:25px;
+}
+
+/* CARD */
+
+.taukil-card{
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+/* =========================
+   SYARAT
+========================= */
+
+.syarat-card{
+
+    background:#0a7b3f;
+    color:white;
+}
+
+.syarat-card h3{
+
+    margin-bottom:20px;
+
+    padding-left:12px;
+
+    border-left:4px solid white;
+}
+
+.syarat-card ul{
+
+    list-style:none;
+}
+
+.syarat-card li{
+
+    margin-bottom:15px;
+
+    padding-left:25px;
+
+    position:relative;
+
+    line-height:1.7;
+}
+
+.syarat-card li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+}
+
+/* =========================
+   PROSEDUR
+========================= */
+
+.prosedur-card{
+
+    background:white;
+}
+
+.prosedur-card h3{
+
+    background:#0a7b3f;
+
+    color:white;
+
+    padding:12px 15px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+}
+
+.step-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.step-number{
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:#0a7b3f;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:700;
+
+    flex-shrink:0;
+}
+
+.step-item p{
+    line-height:1.7;
+}
+
+/* =========================
+   NOTE
+========================= */
+
+.note-box{
+
+    width:95%;
+    max-width:1200px;
+
+    margin:auto;
+    margin-bottom:60px;
+
+    background:#e5e5e5;
+
+    border-radius:10px;
+
+    padding:15px 20px;
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+}
+
+.note-box i{
+    color:#444;
+}
+
+.note-box a{
+    color:#0a7b3f;
+    font-weight:600;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .page-title h2{
+        font-size:28px;
+    }
+
+    .taukil-container{
+
+        grid-template-columns:1fr;
+    }
+
+    .taukil-card{
+        padding:20px;
+    }
+
+    .step-number{
+        width:35px;
+        height:35px;
+        font-size:14px;
+    }
+
+    .note-box{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        font-size:14px;
+    }
+
+}
+/* =========================
+   RESPONSIVE
+========================= */
+.mobile-dropdown-btn{
+    width:100%;
+    background:none;
+    border:none;
+    padding:15px;
+    text-align:left;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:15px;
+    cursor:pointer;
+}
+
+.mobile-dropdown-content{
+    display:none;
+    background:#f8f8f8;
+}
+
+.mobile-dropdown-content a{
+    display:block;
+    padding:12px 25px;
+}
+
+.mobile-dropdown.active .mobile-dropdown-content{
+    display:block;
+}
+@media(max-width:768px){
+
+    body{
+        padding-top:75px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .contact-btn{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .logo img{
+        width:35px;
+    }
+
+    .logo h3{
+        font-size:8px;
+    }
+
+    .logo h1{
+        font-size:18px;
+    }
+
+    .logo p{
+        font-size:8px;
+    }
+
+    .search-popup{
+
+        left:10px;
+        right:10px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box input{
+        width:100%;
+    }
+
+    .footer{
+        display:none;
+    }
+
+    .footer-mobile{
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        background:#0a7b3f;
+
+        padding:15px 0;
+
+        color:white;
+    }
+
+    .social-mobile{
+        display:flex;
+        gap:20px;
+    }
+
+    .social-mobile a{
+        color:white;
+        font-size:20px;
+    }
+
+    .footer-mobile p{
+        margin-top:8px;
+        font-size:10px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <img src="../assets/img/logo/logo kua.png" alt="logo">
+
+        <div>
+            <h3>KUA KECAMATAN</h3>
+            <h1>WARUNGPRING</h1>
+            <p>Kabupaten Pemalang</p>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="../index.html">Beranda</a>
+
+        <div class="dropdown">
+
+            <a href="#">
+                Tentang Kami
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+                <a href="../profil/profil kua.html">Profil</a>
+      <a href="../profil/sejarah kua.html">Sejarah KUA</a>
+      <a href="../profil/struktur organisasi.html">Struktur Organisasi</a>
+      <a href="../profil/tugas dan fungsi.html">Tugas dan Fungsi</a>
+    </div>
+
+        </div>
+
+        <div class="dropdown">
+
+            <a href="#">
+                Layanan
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+    <div class="dropdown-menu">
+      <a href="syarat daftar nikah.html">Daftar Nikah</a>
+      <a href="wakaf.html">Wakaf</a>
+      <a href="isbat nikah.html">Isbat Nikah</a>
+      <a href="wali nikah.html">Wali Nikah</a>
+      <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
+      <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
+      <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
+      <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+    </div>
+  </div>
+
+        </div>
+
+        <a href="../blangkon.html">Blangko N</a>
+
+                <div class="dropdown">
+
+            <a href="#">
+                Sarana Keagamaan
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+      <a href="../sarana keagamaan/data ponpes.html">Data Ponpes</a>
+      <a href="../sarana keagamaan/data madrasah.html">Data Madrasah Diniyah</a>
+      <a href="../sarana keagamaan/data musholla.html">Data Musholla</a>
+      <a href="../sarana keagamaan/data masjid.html">Data Masjid</a>
+    </div>
+
+        </div>
+
+
+
+    </nav>
+
+    <div class="nav-right">
+
+        <button class="search-btn"
+        onclick="toggleSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="#kontak"
+        class="contact-btn">
+            <i class="fa-solid fa-phone"></i>
+            Hubungi Kami
+        </a>
+
+        <button class="menu-toggle"
+        onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="../index.html">Beranda</a>
+
+    <!-- Tentang Kami -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Tentang Kami
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="../profil/profil kua.html">Profil</a>
+            <a href="../profil/sejarah kua.html">Sejarah KUA</a>
+            <a href="../profil/struktur organisasi.html">Struktur Organisasi</a>
+            <a href="../profil/tugas dan fungsi.html">Tugas & Fungsi</a>
+        </div>
+
+    </div>
+
+    <!-- Layanan -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Layanan
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="syarat daftar nikah.html">Daftar Nikah</a>
+            <a href="wakaf.html">Wakaf</a>
+            <a href="isbat nikah.html">Isbat Nikah</a>
+            <a href="wali nikah.html">Wali Nikah</a>
+            <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
+            <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
+            <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
+            <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+        </div>
+
+    </div>
+
+    <a href="../blangkon.html">Blangko N</a>
+
+    <!-- Sarana -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Sarana Keagamaan
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="../sarana keagamaan/data ponpes.html">Data Ponpes</a>
+            <a href="../sarana keagamaan/data madrasah.html">Data Madrasah</a>
+            <a href="../sarana keagamaan/data musholla.html">Data Musholla</a>
+            <a href="../sarana keagamaan/data masjid.html">Data Masjid</a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="search-popup" id="searchPopup">
+
+    <div class="search-box">
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Cari...">
+
+        <button onclick="searchText()">
+            Cari
+        </button>
+
+    </div>
+
+</div>
+
+<main>
+<section class="page-title">
+    <h2>Informasi Taukil Wali Bil Kitabah</h2>
+    <div class="title-line"></div>
+</section>
+
+<section class="taukil-container">
+
+    <!-- PERSYARATAN -->
+    <div class="taukil-card syarat-card">
+
+        <h3>Persyaratan</h3>
+
+        <ul>
+
+            <li>Fotokopi KTP dan KK dari kedua calon pengantin.</li>
+
+            <li>Fotokopi KTP wali nikah.</li>
+
+            <li>Fotokopi KTP dua orang saksi.</li>
+
+            <li>Materai Rp10.000 sebanyak 1 lembar.</li>
+
+            <li>Surat pengantar wali dari desa.</li>
+
+        </ul>
+
+    </div>
+
+    <!-- PROSEDUR -->
+    <div class="taukil-card prosedur-card">
+
+        <h3>Prosedur</h3>
+
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <p>Wali nikah menyerahkan berkas ke KUA.</p>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <p>Wali hadir ke KUA dengan membawa 2 orang saksi.</p>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <p>Petugas melakukan pemeriksaan dokumen.</p>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">4</div>
+            <p>Surat Taukil Wali Bil Kitabah dibuat oleh KUA dan ditandatangani.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CATATAN -->
+<div class="note-box">
+
+    <i class="fas fa-info-circle"></i>
+
+    <span>
+        Nb. Untuk berkas Ikrar Taukil Wali Bil Kitabah dapat diakses
+        <a href="https://docs.google.com/document/d/1mICe83xIQAvfwLk2TdkODZuyxQkS4mN5/edit">disini</a>
+    </span>
+
+</div>
+</main>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+            <img src="../assets/img/logo/logo kua.png">
+
+            <h2>KUA WARUNGPRING</h2>
+
+            <p>Kabupaten Pemalang</p>
+
+        </div>
+
+        <div class="footer-menu">
+
+            <h3>Navigasi</h3>
+
+
+            <a href="/index.html">Beranda</a>
+            <a href="../profil/profil kua.html">Profil</a>
+            <a href="/index.html#layanan">Layanan</a>
+
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Kontak</h3>
+
+            <p>Warungpring, Pemalang</p>
+
+            <p>(0284) 123456</p>
+
+            <p>kuawarungpring@gmail.com</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2025 KUA Warungpring
+    </div>
+
+</footer>
+
+<div class="footer-mobile">
+
+    <div class="social-mobile">
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+    </div>
+
+    <p>© 2025 KUA Warungpring</p>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+    document
+    .getElementById("mobileMenu")
+    .classList.toggle("show");
+}
+
+function toggleSearch(){
+
+    const popup =
+    document.getElementById("searchPopup");
+
+    popup.style.display =
+    popup.style.display === "block"
+    ? "none"
+    : "block";
+}
+
+function searchText(){
+
+    let keyword =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    let content =
+    document.body.innerText
+    .toLowerCase();
+
+    if(content.includes(keyword)){
+        alert("Kata ditemukan");
+    }else{
+        alert("Kata tidak ditemukan");
+    }
+
+}
+
+window.addEventListener("scroll", function(){
+
+    const navbar =
+    document.querySelector(".navbar");
+
+    if(window.scrollY > 20){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+</script>
+<script>
+document.querySelectorAll('.mobile-dropdown-btn')
+.forEach(btn => {
+
+    btn.addEventListener('click', () => {
+
+        btn.parentElement.classList.toggle('active');
+
+    });
+
+});
+</script>
+</body>
+</html>

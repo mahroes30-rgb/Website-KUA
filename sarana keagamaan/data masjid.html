@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KUA Warungpring</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f6f7;
+    padding-top:90px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:95%;
+    max-width:1300px;
+
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    border-radius:20px;
+
+    padding:12px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:9999;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+     transition: .3s;
+}
+.navbar.scrolled{
+    top: 1px;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:45px;
+}
+
+.logo h3{
+    font-size:11px;
+}
+
+.logo h1{
+    font-size:24px;
+    color:#0a7b3f;
+    line-height:1;
+}
+
+.logo p{
+    font-size:11px;
+    color:#666;
+}
+
+/* =========================
+   NAV MENU
+========================= */
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#0a7b3f;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:45px;
+    left:0;
+
+    min-width:220px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:10px;
+
+    display:flex;
+    flex-direction:column;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+}
+
+.dropdown-menu a{
+    padding:10px 12px;
+    border-radius:10px;
+}
+
+.dropdown-menu a:hover{
+    background:#eef7ee;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* =========================
+   RIGHT MENU
+========================= */
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.search-btn{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#f3f3f3;
+
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#e9e9e9;
+}
+
+.contact-btn{
+
+    background:#0a7b3f;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.contact-btn:hover{
+    background:#086633;
+}
+
+/* =========================
+   SEARCH POPUP
+========================= */
+
+.search-popup{
+
+    display:none;
+
+    position:fixed;
+
+    top:90px;
+    right:30px;
+
+    z-index:99999;
+}
+
+.search-box{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+
+    width:250px;
+
+    padding:10px 15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+}
+
+.search-box button{
+
+    background:#0a7b3f;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-toggle{
+    display:none;
+
+    border:none;
+    background:none;
+
+    font-size:24px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu{
+
+    display:none;
+
+    position:fixed;
+
+    top:80px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:95%;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+    z-index:999;
+}
+
+.mobile-menu a{
+
+    display:block;
+
+    padding:15px;
+
+    text-decoration:none;
+
+    color:#222;
+
+    border-bottom:1px solid #eee;
+}
+
+.mobile-menu.show{
+    display:block;
+}
+
+/* =========================
+   DEMO CONTENT
+========================= */
+
+main{
+    min-height:600px;
+    width:95%;
+    margin:auto;
+}
+
+/* =========================
+   FOOTER DESKTOP
+========================= */
+
+.footer{
+
+    background:#0a7b3f;
+
+    color:white;
+
+    margin-top:80px;
+}
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:40px;
+
+    padding:40px 20px;
+}
+
+.footer-logo img{
+    width:60px;
+    margin-bottom:10px;
+}
+
+.footer-menu a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-bottom:10px;
+}
+
+.footer-contact p{
+    margin-bottom:10px;
+}
+
+.copyright{
+
+    text-align:center;
+
+    padding:15px;
+
+    border-top:1px solid rgba(255,255,255,.2);
+}
+
+/* =========================
+   FOOTER MOBILE
+========================= */
+
+.footer-mobile{
+    display:none;
+}
+.data-musholla{
+    padding: 60px 20px;
+    background: #f5f5f5;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.judul{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.garis{
+    width: 120px;
+    height: 5px;
+    background: #0b7a53;
+    margin: 15px auto 40px;
+    border-radius: 20px;
+}
+
+.search-box{
+    max-width: 500px;
+    margin: 0 auto 40px;
+    position: relative;
+}
+
+.search-box input{
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}
+
+.search-box i{
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #111;
+}
+
+.table-wrapper{
+    overflow-x: auto;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead{
+    background: #0b7a53;
+    color: white;
+}
+
+th{
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+td{
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even){
+    background: #f9f9f9;
+}
+
+tbody tr:hover{
+    background: #eef8ff;
+}
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin:30px 0;
+    flex-wrap:wrap;
+}
+
+.pagination a,
+.pagination span{
+    padding:8px 12px;
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+.pagination a:hover{
+    color:#0b7a53;
+}
+
+.pagination .active{
+    background:#0b7a53;
+    color:#fff;
+    border-radius:6px;
+}
+
+.pagination .prev,
+.pagination .next{
+    font-weight:500;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+.mobile-dropdown-btn{
+    width:100%;
+    background:none;
+    border:none;
+    padding:15px;
+    text-align:left;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:15px;
+    cursor:pointer;
+}
+
+.mobile-dropdown-content{
+    display:none;
+    background:#f8f8f8;
+}
+
+.mobile-dropdown-content a{
+    display:block;
+    padding:12px 25px;
+}
+
+.mobile-dropdown.active .mobile-dropdown-content{
+    display:block;
+}
+@media(max-width:768px){
+
+    body{
+        padding-top:75px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .contact-btn{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .logo img{
+        width:35px;
+    }
+
+    .logo h3{
+        font-size:8px;
+    }
+
+    .logo h1{
+        font-size:18px;
+    }
+
+    .logo p{
+        font-size:8px;
+    }
+
+    .search-popup{
+
+        left:10px;
+        right:10px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box input{
+        width:100%;
+    }
+
+    .footer{
+        display:none;
+    }
+
+    .footer-mobile{
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+
+        background:#0a7b3f;
+
+        padding:15px 0;
+
+        color:white;
+    }
+
+    .social-mobile{
+        display:flex;
+        gap:20px;
+    }
+
+    .social-mobile a{
+        color:white;
+        font-size:20px;
+    }
+
+    .footer-mobile p{
+        margin-top:8px;
+        font-size:10px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <img src="../assets/img/logo/logo kua.png" alt="logo">
+
+        <div>
+            <h3>KUA KECAMATAN</h3>
+            <h1>WARUNGPRING</h1>
+            <p>Kabupaten Pemalang</p>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="../index.html">Beranda</a>
+
+        <div class="dropdown">
+
+            <a href="#">
+                Tentang Kami
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+                <a href="../profil/profil kua.html">Profil</a>
+      <a href="../profil/sejarah kua.html">Sejarah KUA</a>
+      <a href="../profil/struktur organisasi.html">Struktur Organisasi</a>
+      <a href="../profil/tugas dan fungsi.html">Tugas dan Fungsi</a>
+    </div>
+
+        </div>
+
+        <div class="dropdown">
+
+            <a href="#">
+                Layanan
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+    <div class="dropdown-menu">
+      <a href="syarat daftar nikah.html">Daftar Nikah</a>
+      <a href="wakaf.html">Wakaf</a>
+      <a href="isbat nikah.html">Isbat Nikah</a>
+      <a href="wali nikah.html">Wali Nikah</a>
+      <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
+      <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
+      <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
+      <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+    </div>
+  </div>
+
+        </div>
+
+        <a href="../blangkon.html">Blangko N</a>
+
+                <div class="dropdown">
+
+            <a href="#">
+                Sarana Keagamaan
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+      <a href="../sarana keagamaan/data ponpes.html">Data Ponpes</a>
+      <a href="../sarana keagamaan/data madrasah.html">Data Madrasah Diniyah</a>
+      <a href="../sarana keagamaan/data musholla.html">Data Musholla</a>
+      <a href="../sarana keagamaan/data masjid.html">Data Masjid</a>
+    </div>
+
+        </div>
+
+
+
+    </nav>
+
+    <div class="nav-right">
+
+        <button class="search-btn"
+        onclick="toggleSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="#kontak"
+        class="contact-btn">
+            <i class="fa-solid fa-phone"></i>
+            Hubungi Kami
+        </a>
+
+        <button class="menu-toggle"
+        onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="../index.html">Beranda</a>
+
+    <!-- Tentang Kami -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Tentang Kami
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="../profil/profil kua.html">Profil</a>
+            <a href="../profil/sejarah kua.html">Sejarah KUA</a>
+            <a href="../profil/struktur organisasi.html">Struktur Organisasi</a>
+            <a href="../profil/tugas dan fungsi.html">Tugas & Fungsi</a>
+        </div>
+
+    </div>
+
+    <!-- Layanan -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Layanan
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="../layanan/syarat daftar nikah.html">Daftar Nikah</a>
+            <a href="../layanan/wakaf.html">Wakaf</a>
+            <a href="../layanan/isbat nikah.html">Isbat Nikah</a>
+            <a href="../layanan/wali nikah.html">Wali Nikah</a>
+            <a href="../layanan/duplikat buku nikah.html">Duplikat Buku Nikah</a>
+            <a href="../layanan/taukil bil kitabah.html">Taukil Bil Kitabah</a>
+            <a href="../layanan/rekomendasi nikah.html">Rekomendasi Nikah</a>
+            <a href="../layanan/pengumuman nikah.html">Pengumuman Nikah</a>
+        </div>
+
+    </div>
+
+    <a href="../blangkon.html">Blangko N</a>
+
+    <!-- Sarana -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Sarana Keagamaan
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="data ponpes.html">Data Ponpes</a>
+            <a href="data madrasah.html">Data Madrasah</a>
+            <a href="data musholla.html">Data Musholla</a>
+            <a href="data masjid.html">Data Masjid</a>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="search-popup" id="searchPopup">
+
+    <div class="search-box">
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Cari...">
+
+        <button onclick="searchText()">
+            Cari
+        </button>
+
+    </div>
+
+</div>
+
+<main>
+<section class="data-musholla">
+    <div class="container">
+
+        <h1 class="judul">Data Masjid</h1>
+        <div class="garis"></div>
+
+        <!-- Search -->
+
+        <!-- Tabel -->
+        <div class="table-wrapper">
+            <table id="mushollaTable">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>ID Masjid</th>
+                        <th>Nama Masjid</th>
+                        <th>Tipologi</th>
+                        <th>Alamat</th>
+                        <th>Status Tanah</th>
+                        <th>Luas Tanah</th>
+                        <th>Luas Bangunan</th>
+                        <th>Tahun Berdiri</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>01.3.14.27.14.00000</td>
+                        <td>AL MAKMUR</td>
+                        <td>Masjid Besar</td>
+                        <td>DESA WARUNGPRING RT 06 RW 01</td>
+                        <td>Wakaf</td>
+                        <td>760</td>
+                        <td>430</td>
+                        <td>1931</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>01.4.14.27.14.000002</td>
+                        <td>Al-Falah</td>
+                        <td>Masjid Jami</td>
+                        <td>JL. RAYA MOGA WARUNGPRING RT 02 RW 06 WARUNGPRING</td>
+                        <td>Wakaf</td>
+                        <td>425</td>
+                        <td>286</td>
+                        <td>1987</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>01.4.14.27.14.000003</td>
+                        <td>I'TOILAH</td>
+                        <td>Masjid Besar</td>
+                        <td>DUSUN MANIS RT 08 RW 01 PAKEMBARAN</td>
+                        <td>Wakaf</td>
+                        <td>173</td>
+                        <td>629</td>
+                        <td>1929</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>01.4.14.27.14.000005</td>
+                        <td>Sulukul Muttaqin</td>
+                        <td>Masjid Jami</td>
+                        <td>DUSUN BENGKENG RT 06 RW 02 MERENG</td>
+                        <td>Wakaf</td>
+                        <td>715</td>
+                        <td>400</td>
+                        <td>1928</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>01.4.14.27.14.000006</td>
+                        <td>Rodlotul Muslimin</td>
+                        <td>Masjid Jami</td>
+                        <td>Dsn. Gombong RT 15 RW 03 Desa Warungpring</td>
+                        <td>Wakaf</td>
+                        <td>480</td>
+                        <td>336</td>
+                        <td>1930</td>
+                    </tr>
+
+                    <tr>
+    <td>6</td>
+    <td>01.4.14.27.14.000007</td>
+    <td>A'THOILAH</td>
+    <td>Masjid Jami</td>
+    <td>Dusun Karangtengah RT 03/04 Warungpring</td>
+    <td>Wakaf</td>
+    <td>460</td>
+    <td>500</td>
+    <td>1986</td>
+</tr>
+
+<tr>
+    <td>7</td>
+    <td>01.4.14.27.14.000008</td>
+    <td>Darussalam</td>
+    <td>Masjid Jami</td>
+    <td>Dusun Grendi RT 06 RW 02 Desa Pakembaran</td>
+    <td>Wakaf</td>
+    <td>213</td>
+    <td>750</td>
+    <td>1936</td>
+</tr>
+
+<tr>
+    <td>8</td>
+    <td>01.4.14.27.14.000009</td>
+    <td>Baiturohim</td>
+    <td>Masjid Jami</td>
+    <td>Dsn Bodas RT 01 RW 03 Desa Pakembaran</td>
+    <td>Wakaf</td>
+    <td>170</td>
+    <td>340</td>
+    <td>1953</td>
+</tr>
+
+<tr>
+    <td>9</td>
+    <td>01.4.14.27.14.000035</td>
+    <td>Baitul Makmur</td>
+    <td>Masjid Jami</td>
+    <td>Dsn. Krajan RT 01/01 Desa Karangdawa</td>
+    <td>Wakaf</td>
+    <td>242</td>
+    <td>242</td>
+    <td>1940</td>
+</tr>
+
+<tr>
+    <td>10</td>
+    <td>01.4.14.27.14.000010</td>
+    <td>Al-Badar</td>
+    <td>Masjid Jami</td>
+    <td>Dsn. Sugandu RT 05/03 Desa Karangdawa</td>
+    <td>Wakaf</td>
+    <td>219</td>
+    <td>219</td>
+    <td>1982</td>
+</tr>
+
+<tr>
+    <td>11</td>
+    <td>01.4.14.27.14.000011</td>
+    <td>Baitur Rohman</td>
+    <td>Masjid Jami</td>
+    <td>Dsn. Karanganyar RT 04/02 Desa Karangdawa</td>
+    <td>Wakaf</td>
+    <td>158</td>
+    <td>158</td>
+    <td>1953</td>
+</tr>
+
+<tr>
+    <td>12</td>
+    <td>01.4.14.27.14.000012</td>
+    <td>Baitul Khak</td>
+    <td>Masjid Jami</td>
+    <td>Dsn. Krajan RT 01/01 Desa Datar</td>
+    <td>Wakaf</td>
+    <td>253</td>
+    <td>154</td>
+    <td>1921</td>
+</tr>
+
+<tr>
+    <td>13</td>
+    <td>01.4.14.27.14.000013</td>
+    <td>Baitul Hikmah</td>
+    <td>Masjid Jami</td>
+    <td>Dsn. Clincing RT 013/04 Desa Datar</td>
+    <td>Wakaf</td>
+    <td>180</td>
+    <td>120</td>
+    <td>2003</td>
+</tr>
+
+<tr>
+    <td>14</td>
+    <td>01.4.14.27.14.000014</td>
+    <td>Baitussalam</td>
+    <td>Masjid Jami</td>
+    <td>Dsn. Salam RT 08/03 Desa Datar</td>
+    <td>Wakaf</td>
+    <td>369</td>
+    <td>369</td>
+    <td>1986</td>
+</tr>
+
+<tr>
+    <td>15</td>
+    <td>01.4.14.27.14.000015</td>
+    <td>Nurul Inayah</td>
+    <td>Masjid Jami</td>
+    <td>Dsn. CA RT 46/06 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>163</td>
+    <td>152</td>
+    <td>2010</td>
+</tr>
+
+<tr>
+    <td>16</td>
+    <td>01.4.14.27.14.000017</td>
+    <td>Baetul Mutaqin</td>
+    <td>Masjid Jami</td>
+    <td>Dsn. Gombong RT 07/02 Desa Warungpring</td>
+    <td>Wakaf</td>
+    <td>650</td>
+    <td>560</td>
+    <td>1935</td>
+</tr>
+
+<tr>
+    <td>17</td>
+    <td>01.4.14.27.14.000018</td>
+    <td>RODLOTUSSULAIMAN</td>
+    <td>Masjid Jami</td>
+    <td>MERENG KUBANG RT 32/08 Desa Mereng</td>
+    <td>Wakaf</td>
+    <td>299</td>
+    <td>440</td>
+    <td>1923</td>
+</tr>
+
+<tr>
+    <td>18</td>
+    <td>01.4.14.27.14.000019</td>
+    <td>BAETUL MUTAQIN</td>
+    <td>Masjid Jami</td>
+    <td>MERENG KRAJAN RT 27/06 Desa Mereng</td>
+    <td>Wakaf</td>
+    <td>395</td>
+    <td>143</td>
+    <td>1952</td>
+</tr>
+
+<tr>
+    <td>19</td>
+    <td>01.4.14.27.14.000020</td>
+    <td>BAETUL MU'MININ</td>
+    <td>Masjid Jami</td>
+    <td>PAGEMBRONGAN RT 22/05 Desa Mereng</td>
+    <td>Wakaf</td>
+    <td>195</td>
+    <td>195</td>
+    <td>1967</td>
+</tr>
+
+<tr>
+    <td>20</td>
+    <td>01.4.14.27.14.000021</td>
+    <td>BAETURROHIM</td>
+    <td>Masjid Jami</td>
+    <td>DSN PAGEMBRONGAN RT 19/04 Desa Mereng</td>
+    <td>Wakaf</td>
+    <td>354</td>
+    <td>180</td>
+    <td>1928</td>
+</tr>
+
+<tr>
+    <td>21</td>
+    <td>01.4.14.27.14.000022</td>
+    <td>BAETUSSOLIKHIN</td>
+    <td>Masjid Jami</td>
+    <td>BENGKENG UTARA RT 04/01 Mereng</td>
+    <td>Wakaf</td>
+    <td>282</td>
+    <td>282</td>
+    <td>1960</td>
+</tr>
+
+<tr>
+    <td>22</td>
+    <td>01.4.14.27.14.000023</td>
+    <td>BAITUL MUTTAQIN</td>
+    <td>Masjid Jami</td>
+    <td>DSN CA RT 44/06 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>217</td>
+    <td>108</td>
+    <td>1970</td>
+</tr>
+
+<tr>
+    <td>23</td>
+    <td>01.4.14.27.14.000024</td>
+    <td>BAITUL MUFTI</td>
+    <td>Masjid Jami</td>
+    <td>DSN KRANDING RT 39/05 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>192</td>
+    <td>162</td>
+    <td>1983</td>
+</tr>
+
+<tr>
+    <td>24</td>
+    <td>01.4.14.27.14.000025</td>
+    <td>NURUL IMAN</td>
+    <td>Masjid Jami</td>
+    <td>DSN KRANDING RT 33/04 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>192</td>
+    <td>154</td>
+    <td>1980</td>
+</tr>
+
+<tr>
+    <td>25</td>
+    <td>01.4.14.27.14.000026</td>
+    <td>BAETUL MUTTAQIN</td>
+    <td>Masjid Jami</td>
+    <td>DSN KRANDING RT 30/04 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>264</td>
+    <td>140</td>
+    <td>1957</td>
+</tr>
+
+<tr>
+    <td>26</td>
+    <td>01.4.14.27.14.000027</td>
+    <td>ATTAQWA</td>
+    <td>Masjid Jami</td>
+    <td>DSN RANDU RT 27/03 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>253</td>
+    <td>210</td>
+    <td>1992</td>
+</tr>
+
+<tr>
+    <td>27</td>
+    <td>01.4.14.27.14.000028</td>
+    <td>DARUSSOLIHIN</td>
+    <td>Masjid Jami</td>
+    <td>DSN RANDU RT 22/03 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>264</td>
+    <td>135</td>
+    <td>1984</td>
+</tr>
+
+<tr>
+    <td>28</td>
+    <td>01.4.14.27.14.000029</td>
+    <td>BAITUSSOLEH</td>
+    <td>Masjid Jami</td>
+    <td>DSN RANDU RT 17/02 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>430</td>
+    <td>195</td>
+    <td>1951</td>
+</tr>
+
+<tr>
+    <td>29</td>
+    <td>01.4.14.27.14.000030</td>
+    <td>DARUSSALAM</td>
+    <td>Masjid Jami</td>
+    <td>DSN KRAJAN RT 02/01 Desa Cibuyur</td>
+    <td>Wakaf</td>
+    <td>359</td>
+    <td>267</td>
+    <td>1979</td>
+</tr>
+
+<tr>
+    <td>30</td>
+    <td>01.4.14.27.14.000031</td>
+    <td>BAITURRIDWAN</td>
+    <td>Masjid Jami</td>
+    <td>DSN GOMBONG RT 12/02 Desa Warungpring</td>
+    <td>Wakaf</td>
+    <td>534</td>
+    <td>300</td>
+    <td>1959</td>
+</tr>
+
+<tr>
+    <td>31</td>
+    <td>01.4.14.27.14.000032</td>
+    <td>AL-MANSUR</td>
+    <td>Masjid Jami</td>
+    <td>DSN GOMBONG RT 10/02 Desa Warungpring</td>
+    <td>Wakaf</td>
+    <td>393</td>
+    <td>500</td>
+    <td>1963</td>
+</tr>
+
+<tr>
+    <td>32</td>
+    <td>01.4.14.27.14.000033</td>
+    <td>DARUSSALAM</td>
+    <td>Masjid Jami</td>
+    <td>DSN PAMULIAN RT 01/05 Desa Warungpring</td>
+    <td>Wakaf</td>
+    <td>335</td>
+    <td>335</td>
+    <td>1915</td>
+</tr>
+
+<tr>
+    <td>33</td>
+    <td>01.4.14.27.14.000034</td>
+    <td>SABILUL MUTTAQIN</td>
+    <td>Masjid Jami</td>
+    <td>DUKUH KRAJAN RT 09/01 Desa Warungpring</td>
+    <td>Wakaf</td>
+    <td>198</td>
+    <td>280</td>
+    <td>1987</td>
+</tr>
+
+<tr>
+    <td>34</td>
+    <td>01.6.14.27.14.000036</td>
+    <td>JAGA MULYA</td>
+    <td>Masjid di Tempat Publik</td>
+    <td>Jl. KH. Moh. Idris No. 7 Dusun Bengkeng RT 011 RW 003</td>
+    <td>Wakaf</td>
+    <td>1658</td>
+    <td></td>
+    <td>2021</td>
+</tr>
+
+
+                    <!-- Tambahkan data lainnya di sini -->
+                     
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+<div class="pagination">
+
+    <button onclick="changePage(-1)">
+        Previous
+    </button>
+
+    <div id="pageNumbers"></div>
+
+    <button onclick="changePage(1)">
+        Next
+    </button>
+
+</div>
+</main>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+            <img src="../assets/img/logo/logo kua.png">
+
+            <h2>KUA WARUNGPRING</h2>
+
+            <p>Kabupaten Pemalang</p>
+
+        </div>
+
+        <div class="footer-menu">
+
+            <h3>Navigasi</h3>
+
+
+            <a href="/index.html">Beranda</a>
+            <a href="../profil/profil kua.html">Profil</a>
+            <a href="/index.html#layanan">Layanan</a>
+
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Kontak</h3>
+
+            <p>Warungpring, Pemalang</p>
+
+            <p>(0284) 123456</p>
+
+            <p>kuawarungpring@gmail.com</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2025 KUA Warungpring
+    </div>
+
+</footer>
+
+<div class="footer-mobile">
+
+    <div class="social-mobile">
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+    </div>
+
+    <p>© 2025 KUA Warungpring</p>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+    document
+    .getElementById("mobileMenu")
+    .classList.toggle("show");
+}
+
+function toggleSearch(){
+
+    const popup =
+    document.getElementById("searchPopup");
+
+    popup.style.display =
+    popup.style.display === "block"
+    ? "none"
+    : "block";
+}
+
+function searchText(){
+
+    let keyword =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    let content =
+    document.body.innerText
+    .toLowerCase();
+
+    if(content.includes(keyword)){
+        alert("Kata ditemukan");
+    }else{
+        alert("Kata tidak ditemukan");
+    }
+
+}
+
+window.addEventListener("scroll", function(){
+
+    const navbar =
+    document.querySelector(".navbar");
+
+    if(window.scrollY > 20){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+</script>
+
+<script>
+
+const allRows =
+Array.from(
+document.querySelectorAll(
+"#mushollaTable tbody tr"
+));
+
+const rowsPerPage = 10;
+
+let currentPage = 1;
+
+function displayTable(page){
+
+    currentPage = page;
+
+    const start =
+    (page - 1) * rowsPerPage;
+
+    const end =
+    start + rowsPerPage;
+
+    allRows.forEach((row,index)=>{
+
+        row.style.display =
+        (index >= start &&
+         index < end)
+         ? ""
+         : "none";
+
+    });
+
+    renderPagination();
+}
+
+function renderPagination(){
+
+    const totalPages =
+    Math.ceil(
+    allRows.length / rowsPerPage
+    );
+
+    const pageNumbers =
+    document.getElementById(
+    "pageNumbers"
+    );
+
+    pageNumbers.innerHTML = "";
+
+    for(let i=1;
+        i<=totalPages;
+        i++){
+
+        const btn =
+        document.createElement("a");
+
+        btn.innerText = i;
+
+        if(i === currentPage){
+            btn.classList.add("active");
+        }
+
+        btn.href="#";
+
+        btn.onclick =
+        function(e){
+
+            e.preventDefault();
+
+            displayTable(i);
+
+        };
+
+        pageNumbers.appendChild(btn);
+    }
+}
+
+function changePage(step){
+
+    const totalPages =
+    Math.ceil(
+    allRows.length / rowsPerPage
+    );
+
+    let newPage =
+    currentPage + step;
+
+    if(newPage < 1) return;
+    if(newPage > totalPages) return;
+
+    displayTable(newPage);
+}
+
+displayTable(1);
+
+</script>
+<script>
+document.querySelectorAll('.mobile-dropdown-btn')
+.forEach(btn => {
+
+    btn.addEventListener('click', () => {
+
+        btn.parentElement.classList.toggle('active');
+
+    });
+
+});
+</script>
+</body>
+</html>

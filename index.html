@@ -1,0 +1,920 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KUA Warungpring</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ICON -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="/assets/img/logo/logo kua.png" alt="logo">
+      <div>
+        <h3>KUA KECAMATAN</h3>
+        <h1>WARUNGPRING</h1>
+        <p>Kabupaten Pemalang</p>
+      </div>
+    </div>
+
+    <nav>
+
+  <a href="#" class="active">Beranda</a>
+
+  <!-- PROFIL -->
+  <div class="dropdown">
+    <a href="#">Tentang Kami <i class="fa-solid fa-chevron-down"></i></a>
+
+    <div class="dropdown-menu">
+      <a href="profil/profil kua.html">Profil</a>
+      <a href="profil/sejarah kua.html">Sejarah KUA</a>
+      <a href="profil/struktur organisasi.html">Struktur Organisasi</a>
+      <a href="profil/tugas dan fungsi.html">Tugas dan Fungsi</a>
+    </div>
+  </div>
+
+  <!-- LAYANAN -->
+  <div class="dropdown">
+    <a href="#">Layanan <i class="fa-solid fa-chevron-down"></i></a>
+
+    <div class="dropdown-menu">
+      <a href="layanan/syarat daftar nikah.html">Daftar Nikah</a>
+      <a href="layanan/wakaf.html">Wakaf</a>
+      <a href="layanan/isbat nikah.html">Isbat Nikah</a>
+      <a href="layanan/wali nikah.html">Wali Nikah</a>
+      <a href="layanan/duplikat buku nikah.html">Duplikat Buku Nikah</a>
+      <a href="layanan/taukil bil kitabah.html">Taukil Bil Kitabah</a>
+      <a href="layanan/rekomendasi nikah.html">Rekomendasi Nikah</a>
+      <a href="layanan/pengumuman nikah.html">Pengumuman Nikah</a>
+    </div>
+  </div>
+
+  <!-- BLANGKO -->
+  <a href="blangkon.html">Blangko N</a>
+
+  <!-- SARANA -->
+  <div class="dropdown">
+    <a href="#">Sarana Keagamaan <i class="fa-solid fa-chevron-down"></i></a>
+
+    <div class="dropdown-menu">
+      <a href="sarana keagamaan/data ponpes.html">Data Ponpes</a>
+      <a href="sarana keagamaan/data madrasah.html">Data Madrasah Diniyah</a>
+      <a href="sarana keagamaan/data musholla.html">Data Musholla</a>
+      <a href="sarana keagamaan/data masjid.html">Data Masjid</a>
+    </div>
+  </div>
+
+</nav>
+
+    <div class="nav-right">
+      <button class="menu-toggle" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<div class="search-container">
+
+    <button class="search-btn"
+    onclick="toggleSearch()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
+    <div class="search-popup" id="searchPopup">
+
+        <div class="search-box">
+
+            <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari...">
+
+            <button onclick="searchPage()">
+                Cari
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+      <a href="#kontak" class="contact-btn">
+  <i class="fa-solid fa-phone"></i>
+  Hubungi Kami
+</a>
+    </div>
+  </header>
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">Beranda</a>
+
+    <!-- Tentang Kami -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Tentang Kami
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="profil/profil kua.html">Profil</a>
+            <a href="profil/sejarah kua.html">Sejarah KUA</a>
+            <a href="profil/struktur organisasi.html">Struktur Organisasi</a>
+            <a href="profil/tugas dan fungsi.html">Tugas & Fungsi</a>
+        </div>
+
+    </div>
+
+    <!-- Layanan -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Layanan
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="layanan/syarat daftar nikah.html">Daftar Nikah</a>
+            <a href="layanan/wakaf.html">Wakaf</a>
+            <a href="layanan/isbat nikah.html">Isbat Nikah</a>
+            <a href="layanan/wali nikah.html">Wali Nikah</a>
+            <a href="layanan/duplikat buku nikah.html">Duplikat Buku Nikah</a>
+        </div>
+
+    </div>
+
+    <a href="blangkon.html">Blangko N</a>
+
+    <!-- Sarana -->
+    <div class="mobile-dropdown">
+
+        <button class="mobile-dropdown-btn">
+            Sarana Keagamaan
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-dropdown-content">
+            <a href="sarana keagamaan/data ponpes.html">Data Ponpes</a>
+            <a href="sarana keagamaan/data madrasah.html">Data Madrasah</a>
+            <a href="sarana keagamaan/data musholla.html">Data Musholla</a>
+            <a href="sarana keagamaan/data masjid.html">Data Masjid</a>
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- HERO -->
+  <!-- HERO -->
+<section class="hero">
+
+  <div class="overlay"></div>
+
+  <img src="assets/img/banner/unnamed.jpg" alt="KUA" class="hero-bg">
+
+  <div class="hero-content">
+
+    <div class="hero-text">
+
+      <div class="hero-button"></div>
+      <h1>
+        KUA Kecamatan <br>
+        <span>Warungpring</span>
+      </h1>
+
+      <p>
+        Memberikan pelayanan keagamaan, pernikahan dan
+        bimbingan keluarga sesuai syariat Islam untuk masyarakat.
+      </p>
+
+      <div class="hero-button">
+
+        <a href="https://simkah4.kemenag.go.id/admin/authentication"
+   class="btn-primary"
+   target="_blank">
+          Daftar Nikah Online
+        </a>
+
+      
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- TEKS BERJALAN -->
+
+<div class="running-text">
+
+  <div class="running-label">
+    <i class="fa-solid fa-bullhorn"></i>
+    Informasi
+  </div>
+
+  <div class="running-content">
+
+    <div class="running-track">
+
+      <span>
+      Selamat datang di Website resmi KUA Kecamatan Warungpring, Kabupaten Pemalang. 
+      Harap berhati-hati terhadap pihak yang mengaku sebagai pegawai KUA Kecamatan Warungpring. 
+      Semua layanan di KUA Kecamatan Warungpring tidak dipungut biaya (Gratis)
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- LAYANAN -->
+  <section id="layanan" class="layanan">
+
+    <div class="section-title">
+      <h2>Informasi Layanan</h2>
+    </div>
+
+    <div class="layanan-grid">
+
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+
+        <h3>Syarat Daftar Nikah</h3>
+
+        <p>
+          Informasi lengkap syarat dan dokumen yang harus dipersiapkan.
+        </p>
+
+        <a href="layanan/syarat daftar nikah.html">Lihat Detail</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+
+        <h3>Wakaf</h3>
+
+        <p>
+          Layanan informasi dan pengelolaan wakaf untuk kemaslahatan umat.
+        </p>
+
+        <a href="layanan/wakaf.html">Lihat Detail</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-book-quran"></i>
+        </div>
+
+        <h3>Isbat Nikah</h3>
+
+        <p>
+          Layanan pengesahan pernikahan yang belum tercatat secara resmi.
+        </p>
+
+        <a href="layanan/isbat nikah.html">Lihat Detail</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <h3>Wali Nikah</h3>
+
+        <p>
+          Informasi mengenai wali nikah dan ketentuan yang berlaku.
+        </p>
+
+        <a href="layanan/wali nikah.html">Lihat Detail</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <h3>Duplikat Buku Nikah</h3>
+
+        <p>
+          Layanan pengajuan duplikat buku nikah yang hilang/rusak.
+        </p>
+
+        <a href="layanan/duplikat buku nikah.html">Lihat Detail</a>
+      </div>
+
+      <div class="card">
+  <div class="icon">
+    <i class="fa-solid fa-pen-nib"></i>
+  </div>
+
+  <h3>Taukil Bil Kitabah</h3>
+
+  <p>
+    Layanan surat kuasa perwakilan akad nikah secara tertulis sesuai ketentuan.
+  </p>
+
+  <a href="layanan/taukil bil kitabah.html">Lihat Detail</a>
+</div>
+
+<div class="card">
+  <div class="icon">
+    <i class="fa-solid fa-file-signature"></i>
+  </div>
+
+  <h3>Rekomendasi Nikah</h3>
+
+  <p>
+    Layanan pengajuan surat rekomendasi nikah untuk menikah di luar wilayah.
+  </p>
+
+  <a href="layanan/rekomendasi nikah.html">Lihat Detail</a>
+</div>
+
+<div class="card">
+  <div class="icon">
+    <i class="fa-solid fa-bullhorn"></i>
+  </div>
+
+  <h3>Pengumuman Nikah</h3>
+
+  <p>
+    Informasi dan publikasi jadwal pelaksanaan akad nikah masyarakat.
+  </p>
+
+  <a href="layanan/pengumuman nikah.html">Lihat Detail</a>
+</div>
+
+    </div>
+  </section>
+
+  
+
+ <section class="statistik">
+
+    <div class="section-title">
+        <h2>Statistik Layanan Tahun 2026</h2>
+    </div>
+
+    <div class="chart-card">
+
+        <canvas id="layananChart"></canvas>
+
+    </div>
+
+</section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="contact-container">
+
+    <div class="map">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.4518159433724!2d109.26432594362728!3d-7.073868518437201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6febb5f0a943c1%3A0xfc02d26807bfe38d!2sKantor%20Urusan%20Agama%20(KUA)%20Warungpring!5e1!3m2!1sen!2sid!4v1778514391079!5m2!1sen!2sid"
+    width="100%"
+    height="350"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+    <div class="contact-info">
+      <h2>Kontak Kami</h2>
+
+      <p><i class="fa-solid fa-location-dot"></i> Jl. Raya Warungpring No. 24
+Kec. Warungpring Kab. Pemalang</p>
+      <p><i class="fa-solid fa-phone"></i> (0284) 3285301</p>
+      <p><i class="fa-solid fa-envelope"></i> kuawarungpring@gmail.com</p>
+      <p><i class="fa-solid fa-clock"></i> Senin – Kamis (07:30 - 16:00)</p><p>Jumat (07:30 - 16:30)
+Sabtu, Minggu dan Hari Libur Nasional (Libur)
+</p> 
+    </div>
+
+  </section>
+
+  <!-- SARAN DAN MASUKAN + KALENDER NIKAH -->
+
+<section class="informasi-section">
+
+  <!-- FORM SARAN -->
+   <div class="info-container">
+  <div class="saran-box">
+
+  <div class="saran-box">
+
+    <h2>Saran & Masukan</h2>
+
+    <p>
+        Berikan kritik, saran, atau pertanyaan untuk pelayanan
+        KUA Kecamatan Warungpring.
+    </p>
+
+    <form id="kritikForm">
+
+        <input
+        type="text"
+        id="nama"
+        placeholder="Nama Lengkap"
+        required>
+
+        <input
+        type="email"
+        id="email"
+        placeholder="Email"
+        required>
+
+        <textarea
+        id="pesan"
+        placeholder="Tulis kritik atau saran..."
+        rows="5"
+        required></textarea>
+
+        <button type="submit">
+            Kirim
+        </button>
+
+    </form>
+</div>
+</div>
+
+ <div class="kalender-box">
+
+  <div class="pengumuman-kehendak">
+
+    <div class="section-badge"></div>
+
+    <div class="section-text">
+      <h3>Pengumuman Kehendak Nikah</h3>
+      <p>
+        Informasi dan jadwal pelaksanaan akad nikah masyarakat
+        Kecamatan Warungpring.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="kalender-header">
+
+    <h2 id="bulanTahun"></h2>
+
+    <div class="kalender-nav">
+      <button id="prevBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <button id="nextBtn">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <button class="today-btn" id="todayBtn">
+        Hari Ini
+      </button>
+    </div>
+
+  </div>
+
+  <!-- HARI -->
+  <div class="hari-grid">
+    <div>Min</div>
+    <div>Sen</div>
+    <div>Sel</div>
+    <div>Rab</div>
+    <div>Kam</div>
+    <div>Jum</div>
+    <div>Sab</div>
+  </div>
+
+  <!-- TANGGAL -->
+  <div class="tanggal-grid" id="kalender"></div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+
+  <div class="section-title">
+    <h2>Pertanyaan Umum (FAQ)</h2>
+    <p>
+      Informasi yang sering ditanyakan masyarakat mengenai layanan
+      KUA Kecamatan Warungpring.
+    </p>
+  </div>
+
+  <div class="faq-container">
+
+    <!-- ITEM -->
+    <div class="faq-item">
+
+      <button class="faq-question">
+        Apa syarat daftar nikah?
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Fotokopi KTP, KK, akta kelahiran, pas foto,
+          surat pengantar nikah dan dokumen pendukung lainnya.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+    <div class="faq-item">
+
+      <button class="faq-question">
+        Berapa biaya nikah di KUA?
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Akad nikah di kantor KUA pada jam kerja tidak dikenakan biaya.
+          Di luar kantor dikenakan biaya sesuai ketentuan pemerintah.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+    <div class="faq-item">
+
+      <button class="faq-question">
+        Apakah bisa daftar nikah secara online?
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Bisa. Pendaftaran nikah dapat dilakukan melalui layanan online
+          SIMKAH atau datang langsung ke kantor KUA.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+    <div class="faq-item">
+
+      <button class="faq-question">
+        Bagaimana jika buku nikah hilang?
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Anda dapat mengajukan permohonan duplikat buku nikah
+          dengan membawa surat kehilangan dari kepolisian.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+            <img src="/assets/img/logo/logo kua.png">
+
+            <h2>KUA WARUNGPRING</h2>
+
+            <p>Kabupaten Pemalang</p>
+
+        </div>
+
+        <div class="footer-menu">
+
+            <h3>Navigasi</h3>
+
+            <a href="#">Beranda</a>
+            <a href="profil/profil kua.html">Profil</a>
+            <a href="#layanan">Layanan</a>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Kontak</h3>
+
+            <p>Warungpring, Pemalang</p>
+
+            <p>(0284) 123456</p>
+
+            <p>kuawarungpring@gmail.com</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2025 KUA Warungpring
+    </div>
+
+</footer>
+
+<div class="footer-mobile">
+
+    <div class="social-mobile">
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+    </div>
+
+    <p>© 2025 KUA Warungpring</p>
+
+</div>
+<script src="js/kalender.js"></script>
+
+
+
+<script>
+function toggleMenu(){
+    document
+      .getElementById("mobileMenu")
+      .classList.toggle("show");
+}
+</script>
+<script>
+window.addEventListener('scroll', function() {
+
+    const navbar = document.querySelector('.navbar');
+
+    if(window.scrollY > 50){
+        navbar.classList.add('scrolled');
+    }else{
+        navbar.classList.remove('scrolled');
+    }
+
+});
+</script>
+<script>
+document.querySelectorAll('.mobile-dropdown-btn')
+.forEach(btn => {
+
+    btn.addEventListener('click', () => {
+
+        btn.parentElement.classList.toggle('active');
+
+    });
+
+});
+</script>
+<script>
+
+const form =
+document.getElementById("kritikForm");
+
+form.addEventListener(
+"submit",
+async function(e){
+
+    e.preventDefault();
+
+    const data = {
+
+        nama:
+        document
+        .getElementById("nama")
+        .value,
+
+        email:
+        document
+        .getElementById("email")
+        .value,
+
+        pesan:
+        document
+        .getElementById("pesan")
+        .value
+
+    };
+
+    try{
+
+        await fetch(
+        "https://script.google.com/macros/s/AKfycbyBpPbBKHXVRiWV1RKtb3SA3DGUJUf3XuNZgOxsAyyzJEln6F37mcsy9wt3C-zVhEPaRg/exec",
+        {
+
+            method:"POST",
+
+            body:JSON.stringify(data)
+
+        });
+
+        alert(
+        "Terima kasih, kritik dan saran Anda telah dikirim."
+        );
+
+        form.reset();
+
+    }catch(error){
+
+        alert(
+        "Gagal mengirim data."
+        );
+
+    }
+
+});
+
+</script>
+<script>
+
+function toggleSearch(){
+
+    document
+    .getElementById("searchPopup")
+    .classList.toggle("show");
+
+}
+
+function searchPage(){
+
+    let keyword =
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+    if(keyword.includes("wakaf")){
+
+        window.location.href =
+        "layanan/wakaf.html";
+
+    }
+
+    else if(keyword.includes("isbat")){
+
+        window.location.href =
+        "layanan/isbat nikah.html";
+
+    }
+
+    else if(keyword.includes("wali")){
+
+        window.location.href =
+        "layanan/wali nikah.html";
+
+    }
+
+    else if(keyword.includes("musholla")){
+
+        window.location.href =
+        "sarana keagamaan/data musholla.html";
+
+    }
+
+    else if(keyword.includes("masjid")){
+
+        window.location.href =
+        "sarana keagamaan/data masjid.html";
+
+    }
+
+    else{
+
+        alert("Halaman tidak ditemukan");
+
+    }
+
+}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+const ctx =
+document.getElementById("layananChart");
+
+new Chart(ctx, {
+
+    type: "bar",
+
+    data: {
+
+        labels: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "Mei",
+            "Jun",
+            "Jul",
+            "Agu",
+            "Sep",
+            "Okt",
+            "Nov",
+            "Des"
+        ],
+
+        datasets: [
+
+            {
+                label: "Nikah di KUA",
+
+                data: [
+                    78, 92, 15, 30,
+                    75, 60, 28, 95,
+                    18, 40, 64, 55
+                ],
+
+                backgroundColor:
+                "#9C8CF5",
+
+                borderRadius: 5
+            },
+
+            {
+                label: "Nikah di Luar KUA",
+
+                data: [
+                    65, 74, 62, 57,
+                    96, 67, 68, 22,
+                    40, 72, 51, 35
+                ],
+
+                backgroundColor:
+                "#F7A7A0",
+
+                borderRadius: 5
+            }
+
+        ]
+
+    },
+
+    options: {
+
+        responsive:true,
+
+        maintainAspectRatio:false,
+
+        plugins:{
+            legend:{
+                position:"bottom"
+            }
+        },
+
+        scales:{
+
+            y:{
+                beginAtZero:true,
+                grid:{
+                    color:"#eee"
+                }
+            },
+
+            x:{
+                grid:{
+                    display:false
+                }
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+</body>
+</html>
