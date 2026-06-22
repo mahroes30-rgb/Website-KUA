@@ -418,27 +418,41 @@ main{
 .title-line{
     width:90px;
     height:4px;
+
     background:#0a7b3f;
+
     margin:15px auto 0;
+
     border-radius:20px;
 }
 
 /* =========================
-   WRAPPER
+   CONTAINER
 ========================= */
 
-.isbat-wrapper{
+.duplikat-container{
+
     width:95%;
-    max-width:1300px;
+    max-width:1100px;
+
     margin:auto;
-    margin-bottom:50px;
+    margin-bottom:60px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
 }
 
-.isbat-card{
-    background:#fff;
-    border-radius:20px;
+/* CARD */
+
+.duplikat-card{
+
+    background:white;
+
     padding:30px;
-    margin-bottom:25px;
+
+    border-radius:20px;
 
     box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
@@ -446,57 +460,59 @@ main{
 /* TITLE */
 
 .card-title{
+
     display:flex;
     align-items:center;
+
     gap:12px;
+
     margin-bottom:25px;
 }
 
 .card-title span{
+
     width:4px;
     height:28px;
+
     background:#0a7b3f;
+
     border-radius:10px;
 }
 
 .card-title h3{
-    font-size:28px;
+    font-size:26px;
 }
 
 /* =========================
-   SYARAT
+   PERSYARATAN
 ========================= */
 
-.syarat-grid{
-    display:grid;
-    grid-template-columns:300px 1fr;
-    gap:30px;
+.requirement-list{
+    list-style:none;
 }
 
-.syarat-image img{
-    width:100%;
-    border-radius:15px;
-    display:block;
+.requirement-list li{
+
+    position:relative;
+
+    padding-left:28px;
+
+    margin-bottom:18px;
+
+    line-height:1.8;
 }
 
-.syarat-list{
-    display:grid;
-    gap:18px;
-}
+.requirement-list li::before{
 
-.item{
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-}
+    content:"✓";
 
-.item i{
+    position:absolute;
+
+    left:0;
+
     color:#0a7b3f;
-    margin-top:3px;
-}
 
-.item p{
-    line-height:1.7;
+    font-weight:bold;
 }
 
 /* =========================
@@ -504,40 +520,49 @@ main{
 ========================= */
 
 .step-list{
+
     display:flex;
     flex-direction:column;
+
     gap:25px;
 }
 
 .step-item{
+
     display:flex;
-    gap:18px;
-    align-items:flex-start;
+
+    gap:15px;
 }
 
 .step-number{
+
     width:40px;
     height:40px;
-
-    border-radius:50%;
 
     background:#0a7b3f;
     color:white;
 
+    border-radius:50%;
+
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
     font-weight:700;
 }
 
 .step-item h4{
+
     color:#0a7b3f;
+
     margin-bottom:5px;
 }
 
 .step-item p{
+
     color:#666;
+
+    font-size:14px;
 }
 
 /* =========================
@@ -550,28 +575,28 @@ main{
         font-size:28px;
     }
 
-    .isbat-card{
-        padding:20px;
+    .duplikat-container{
+        grid-template-columns:1fr;
     }
 
-    .syarat-grid{
-        grid-template-columns:1fr;
+    .duplikat-card{
+        padding:20px;
     }
 
     .card-title h3{
         font-size:22px;
     }
 
-    .step-number{
-        width:36px;
-        height:36px;
+    .requirement-list li{
         font-size:14px;
     }
 
-    .item p,
-    .step-item p{
+    .step-number{
+        width:35px;
+        height:35px;
         font-size:14px;
     }
+
 }
 /* =========================
    RESPONSIVE
@@ -732,14 +757,14 @@ main{
             </a>
 
     <div class="dropdown-menu">
-      <a href="syarat daftar nikah.html">Daftar Nikah</a>
+      <a href="syarat-daftar-nikah.html">Daftar Nikah</a>
       <a href="wakaf.html">Wakaf</a>
-      <a href="isbat nikah.html">Isbat Nikah</a>
-      <a href="wali nikah.html">Wali Nikah</a>
-      <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
-      <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
-      <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
-      <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+      <a href="isbat-nikah.html">Isbat Nikah</a>
+      <a href="wali-nikah.html">Wali Nikah</a>
+      <a href="duplikat-buku-nikah.html">Duplikat Buku Nikah</a>
+      <a href="taukil-bil-kitabah.html">Taukil Bil Kitabah</a>
+      <a href="rekomendasi-nikah.html">Rekomendasi Nikah</a>
+      <a href="pengumuman-nikah.html">Pengumuman Nikah</a>
     </div>
   </div>
 
@@ -819,14 +844,14 @@ main{
         </button>
 
         <div class="mobile-dropdown-content">
-            <a href="syarat daftar nikah.html">Daftar Nikah</a>
+            <a href="syarat-daftar-nikah.html">Daftar Nikah</a>
             <a href="wakaf.html">Wakaf</a>
-            <a href="isbat nikah.html">Isbat Nikah</a>
-            <a href="wali nikah.html">Wali Nikah</a>
-            <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
-            <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
-            <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
-            <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+            <a href="isbat-nikah.html">Isbat Nikah</a>
+            <a href="wali-nikah.html">Wali Nikah</a>
+            <a href="duplikat-buku-nikah.html">Duplikat Buku Nikah</a>
+            <a href="taukil-bil-kitabah.html">Taukil Bil Kitabah</a>
+            <a href="rekomendasi-nikah.html">Rekomendasi Nikah</a>
+            <a href="pengumuman-nikah.html">Pengumuman Nikah</a>
         </div>
 
     </div>
@@ -871,61 +896,38 @@ main{
 
 <main>
 <section class="page-title">
-    <h2>Informasi Isbat Nikah</h2>
+    <h2>Informasi Duplikat Buku Nikah</h2>
     <div class="title-line"></div>
 </section>
 
-<section class="isbat-wrapper">
+<section class="duplikat-container">
 
-    <!-- CARD PERSYARATAN -->
-    <div class="isbat-card">
+    <!-- PERSYARATAN -->
+    <div class="duplikat-card">
 
         <div class="card-title">
             <span></span>
             <h3>Persyaratan</h3>
         </div>
 
-        <div class="syarat-grid">
+        <ul class="requirement-list">
 
-            <div class="syarat-image">
-                <img src="../assets/img/layanan/download.jpg" alt="Isbat Nikah">
-            </div>
+            <li>Fotokopi KTP dan KK suami istri.</li>
 
-            <div class="syarat-list">
+            <li>
+                Melampirkan buku nikah yang rusak
+                (jika rusak) atau surat kehilangan
+                dari kepolisian (jika hilang).
+            </li>
 
-                <div class="item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Dokumen yang telah lengkap untuk pengajuan isbat nikah.</p>
-                </div>
+            <li>Pas foto 2x3 background biru.</li>
 
-                <div class="item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Putusan Isbat dari Pengadilan Agama.</p>
-                </div>
-
-                <div class="item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Fotokopi KTP, KK dan Akta Kelahiran suami istri.</p>
-                </div>
-
-                <div class="item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Fotokopi KTP wali nikah (jika masih hidup).</p>
-                </div>
-
-                <div class="item">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Pas foto ukuran 2x3 dan 4x6.</p>
-                </div>
-
-            </div>
-
-        </div>
+        </ul>
 
     </div>
 
-    <!-- CARD PROSEDUR -->
-    <div class="isbat-card">
+    <!-- PROSEDUR -->
+    <div class="duplikat-card">
 
         <div class="card-title">
             <span></span>
@@ -936,33 +938,37 @@ main{
 
             <div class="step-item">
                 <div class="step-number">1</div>
+
                 <div>
-                    <h4>Pengajuan Berkas</h4>
-                    <p>Pemohon mengajukan berkas persyaratan ke KUA.</p>
+                    <h4>Penyerahan Berkas</h4>
+                    <p>
+                        Pemohon membawa seluruh berkas
+                        yang dibutuhkan.
+                    </p>
                 </div>
             </div>
 
             <div class="step-item">
                 <div class="step-number">2</div>
+
                 <div>
                     <h4>Verifikasi Dokumen</h4>
-                    <p>Petugas memeriksa kelengkapan berkas.</p>
+                    <p>
+                        Petugas memeriksa kelengkapan
+                        dokumen.
+                    </p>
                 </div>
             </div>
 
             <div class="step-item">
                 <div class="step-number">3</div>
-                <div>
-                    <h4>Pemrosesan & Pencatatan</h4>
-                    <p>Data dicatat dalam sistem administrasi nikah.</p>
-                </div>
-            </div>
 
-            <div class="step-item">
-                <div class="step-number">4</div>
                 <div>
-                    <h4>Penerbitan Buku Nikah</h4>
-                    <p>Pemohon menerima buku nikah resmi.</p>
+                    <h4>Penerbitan Duplikat</h4>
+                    <p>
+                        Petugas menerbitkan
+                        duplikat buku nikah.
+                    </p>
                 </div>
             </div>
 
@@ -991,7 +997,7 @@ main{
 
             <h3>Navigasi</h3>
 
-
+   
             <a href="/index.html">Beranda</a>
             <a href="../profil/profil kua.html">Profil</a>
             <a href="/index.html#layanan">Layanan</a>

@@ -326,7 +326,26 @@ nav a:hover{
 .mobile-menu.show{
     display:block;
 }
+.page-title{
+    text-align:center;
+    margin:40px 0;
+}
 
+.page-title h2{
+    font-size:40px;
+    font-weight:700;
+}
+
+.title-line{
+    width:90px;
+    height:4px;
+
+    background:#0a7b3f;
+
+    margin:15px auto 0;
+
+    border-radius:20px;
+}
 /* =========================
    DEMO CONTENT
 ========================= */
@@ -402,199 +421,266 @@ main{
     display:none;
 }
 /* =========================
-   PAGE TITLE
+   HALAMAN PENGUMUMAN NIKAH
 ========================= */
 
-.page-title{
+.pengumuman-page{
+     max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.pengumuman-title{
     text-align:center;
-    margin:40px 0;
+    margin-bottom:30px;
 }
 
-.page-title h2{
-    font-size:40px;
-    font-weight:700;
+.pengumuman-title h1{
+    font-size:36px;
+    color:#222;
+    margin-bottom:10px;
 }
-
-.title-line{
-    width:90px;
+.pengumuman-title::after{
+    content:"";
+    display:block;
+    width:120px;
     height:4px;
-
     background:#0a7b3f;
-
     margin:15px auto 0;
-
-    border-radius:20px;
+    border-radius:5px;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
-.duplikat-container{
-
-    width:95%;
-    max-width:1100px;
-
+.pengumuman-title p{
+    color:#666;
+    max-width:700px;
     margin:auto;
-    margin-bottom:60px;
+    line-height:1.7;
+}
+
+/* KALENDER */
+
+.pengumuman-page .kalender-box{
+    width:100%;
+    margin-bottom:35px;
+}
+
+/* DAFTAR PENGUMUMAN */
+
+.daftar-pengumuman{
+    max-width:850px;
+    margin:0 auto;
 
     display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:25px;
-}
-
-/* CARD */
-
-.duplikat-card{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
-}
-
-/* TITLE */
-
-.card-title{
-
-    display:flex;
-    align-items:center;
-
-    gap:12px;
-
-    margin-bottom:25px;
-}
-
-.card-title span{
-
-    width:4px;
-    height:28px;
-
-    background:#0a7b3f;
-
-    border-radius:10px;
-}
-
-.card-title h3{
-    font-size:26px;
-}
-
-/* =========================
-   PERSYARATAN
-========================= */
-
-.requirement-list{
-    list-style:none;
-}
-
-.requirement-list li{
-
-    position:relative;
-
-    padding-left:28px;
-
-    margin-bottom:18px;
-
-    line-height:1.8;
-}
-
-.requirement-list li::before{
-
-    content:"✓";
-
-    position:absolute;
-
-    left:0;
-
-    color:#0a7b3f;
-
-    font-weight:bold;
-}
-
-/* =========================
-   PROSEDUR
-========================= */
-
-.step-list{
-
-    display:flex;
-    flex-direction:column;
-
-    gap:25px;
-}
-
-.step-item{
-
-    display:flex;
-
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
 }
 
-.step-number{
+.pengumuman-card{
+    background:#f6fff8;
+    border:1px solid #d9f0de;
+    border-radius:10px;
+    padding:15px;
 
-    width:40px;
-    height:40px;
-
-    background:#0a7b3f;
-    color:white;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-weight:700;
 }
 
-.step-item h4{
-
+.pengumuman-card h3{
     color:#0a7b3f;
-
-    margin-bottom:5px;
+    font-size:16px;
+    margin-bottom:8px;
 }
 
-.step-item p{
-
-    color:#666;
-
-    font-size:14px;
+.pengumuman-card p{
+    color:#555;
+    line-height:1.7;
+    font-size: 14px;
 }
 
 /* =========================
-   MOBILE
+   KALENDER PENGUMUMAN NIKAH
 ========================= */
 
+.kalender-box{
+    max-width: 850px;
+    margin: 0 auto 40px auto;
+
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+
+.kalender-header{
+    background:#0a7b3f;
+    color:#fff;
+
+    padding:15px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.kalender-header h2{
+    font-size:22px;
+    font-weight:600;
+}
+
+/* NAVIGASI */
+
+.kalender-nav{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.kalender-nav button{
+    width:40px;
+    height:40px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#fff;
+    color:#0a7b3f;
+
+    cursor:pointer;
+    font-weight:600;
+}
+
+.today-btn{
+    width:auto !important;
+    padding:0 15px;
+}
+
+/* HARI */
+
+.hari-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+
+    background:#f5f5f5;
+}
+
+.hari-grid div{
+    text-align:center;
+    padding:15px;
+
+    font-weight:600;
+
+    border:1px solid #e5e5e5;
+}
+
+/* TANGGAL */
+
+.tanggal-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+}
+
+.tanggal{
+    min-height:120px;
+
+    border:1px solid #e5e5e5;
+
+    padding:10px;
+
+    position:relative;
+
+    background:#fff;
+}
+
+.nonaktif{
+    background:#fafafa;
+    color:#bbb;
+}
+
+.active{
+    border:2px solid #1696db;
+}
+
+/* EVENT */
+
+.event-box{
+    margin-top:8px;
+
+    background:#e7f6ff;
+
+    color:#1696db;
+
+    border-radius:8px;
+
+    padding:5px 8px;
+
+    font-size:11px;
+    line-height:1.4;
+}
+
+/* FOOTER */
+
+.kalender-footer{
+    padding:20px;
+    border-top:1px solid #eee;
+}
+
+.kalender-footer h3{
+    margin-bottom:10px;
+}
+
+.kalender-footer p{
+    color:#666;
+}
+
+/* MOBILE */
 @media(max-width:768px){
 
-    .page-title h2{
-        font-size:28px;
+    .kalender-box{
+        max-width:100%;
+        overflow-x:auto;
     }
 
-    .duplikat-container{
+    .daftar-pengumuman{
         grid-template-columns:1fr;
     }
 
-    .duplikat-card{
-        padding:20px;
+}
+@media(max-width:768px){
+
+    .kalender-header{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
     }
 
-    .card-title h3{
-        font-size:22px;
+    .hari-grid div{
+        padding:8px;
+        font-size:12px;
     }
 
-    .requirement-list li{
-        font-size:14px;
+    .tanggal{
+        min-height:60px;
+        padding:5px;
+        font-size:11px;
     }
 
-    .step-number{
-        width:35px;
-        height:35px;
-        font-size:14px;
+    .event-box{
+        display:none;
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .pengumuman-title h1{
+        font-size:28px;
+    }
+
+    .daftar-pengumuman{
+        grid-template-columns:1fr;
     }
 
 }
@@ -757,14 +843,14 @@ main{
             </a>
 
     <div class="dropdown-menu">
-      <a href="syarat daftar nikah.html">Daftar Nikah</a>
+      <a href="syarat-daftar-nikah.html">Daftar Nikah</a>
       <a href="wakaf.html">Wakaf</a>
-      <a href="isbat nikah.html">Isbat Nikah</a>
-      <a href="wali nikah.html">Wali Nikah</a>
-      <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
-      <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
-      <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
-      <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+      <a href="isbat-nikah.html">Isbat Nikah</a>
+      <a href="wali-nikah.html">Wali Nikah</a>
+      <a href="duplikat-buku-nikah.html">Duplikat Buku Nikah</a>
+      <a href="taukil-bil-kitabah.html">Taukil Bil Kitabah</a>
+      <a href="rekomendasi-nikah.html">Rekomendasi Nikah</a>
+      <a href="pengumuman-nikah.html">Pengumuman Nikah</a>
     </div>
   </div>
 
@@ -844,14 +930,14 @@ main{
         </button>
 
         <div class="mobile-dropdown-content">
-            <a href="syarat daftar nikah.html">Daftar Nikah</a>
+            <a href="syarat-daftar-nikah.html">Daftar Nikah</a>
             <a href="wakaf.html">Wakaf</a>
-            <a href="isbat nikah.html">Isbat Nikah</a>
-            <a href="wali nikah.html">Wali Nikah</a>
-            <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
-            <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
-            <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
-            <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+            <a href="isbat-nikah.html">Isbat Nikah</a>
+            <a href="wali-nikah.html">Wali Nikah</a>
+            <a href="duplikat-buku-nikah.html">Duplikat Buku Nikah</a>
+            <a href="taukil-bil-kitabah.html">Taukil Bil Kitabah</a>
+            <a href="rekomendasi-nikah.html">Rekomendasi Nikah</a>
+            <a href="pengumuman-nikah.html">Pengumuman Nikah</a>
         </div>
 
     </div>
@@ -895,84 +981,50 @@ main{
 </div>
 
 <main>
-<section class="page-title">
+    <section class="page-title">
     <h2>Informasi Duplikat Buku Nikah</h2>
     <div class="title-line"></div>
 </section>
+<div class="kalender-box">
 
-<section class="duplikat-container">
+    <div class="kalender-header">
 
-    <!-- PERSYARATAN -->
-    <div class="duplikat-card">
+        <h2 id="bulanTahun"></h2>
 
-        <div class="card-title">
-            <span></span>
-            <h3>Persyaratan</h3>
+        <div class="kalender-nav">
+            <button id="prevBtn">❮</button>
+            <button id="todayBtn" class="today-btn">Hari Ini</button>
+            <button id="nextBtn">❯</button>
         </div>
-
-        <ul class="requirement-list">
-
-            <li>Fotokopi KTP dan KK suami istri.</li>
-
-            <li>
-                Melampirkan buku nikah yang rusak
-                (jika rusak) atau surat kehilangan
-                dari kepolisian (jika hilang).
-            </li>
-
-            <li>Pas foto 2x3 background biru.</li>
-
-        </ul>
 
     </div>
 
-    <!-- PROSEDUR -->
-    <div class="duplikat-card">
+    <div class="hari-grid">
+        <div>Min</div>
+        <div>Sen</div>
+        <div>Sel</div>
+        <div>Rab</div>
+        <div>Kam</div>
+        <div>Jum</div>
+        <div>Sab</div>
+    </div>
 
-        <div class="card-title">
-            <span></span>
-            <h3>Prosedur</h3>
-        </div>
+    <div class="tanggal-grid" id="kalender"></div>
 
-        <div class="step-list">
+</div>
 
-            <div class="step-item">
-                <div class="step-number">1</div>
+<section class="daftar-pengumuman">
 
-                <div>
-                    <h4>Penyerahan Berkas</h4>
-                    <p>
-                        Pemohon membawa seluruh berkas
-                        yang dibutuhkan.
-                    </p>
-                </div>
-            </div>
+    <h2>Daftar Pengumuman Nikah</h2>
 
-            <div class="step-item">
-                <div class="step-number">2</div>
+    <div class="pengumuman-card">
 
-                <div>
-                    <h4>Verifikasi Dokumen</h4>
-                    <p>
-                        Petugas memeriksa kelengkapan
-                        dokumen.
-                    </p>
-                </div>
-            </div>
+        <h3>Suranto & Aprilia</h3>
 
-            <div class="step-item">
-                <div class="step-number">3</div>
-
-                <div>
-                    <h4>Penerbitan Duplikat</h4>
-                    <p>
-                        Petugas menerbitkan
-                        duplikat buku nikah.
-                    </p>
-                </div>
-            </div>
-
-        </div>
+        <p>
+            Tanggal : 6 Juni 2026<br>
+            Waktu : 13:00 WIB
+        </p>
 
     </div>
 
@@ -997,11 +1049,10 @@ main{
 
             <h3>Navigasi</h3>
 
-   
+
             <a href="/index.html">Beranda</a>
             <a href="../profil/profil kua.html">Profil</a>
             <a href="/index.html#layanan">Layanan</a>
-
 
         </div>
 
@@ -1102,6 +1153,7 @@ window.addEventListener("scroll", function(){
 
 });
 </script>
+<script src="../js/kalender.js"></script>
 <script>
 document.querySelectorAll('.mobile-dropdown-btn')
 .forEach(btn => {

@@ -401,9 +401,9 @@ main{
 .footer-mobile{
     display:none;
 }
-/* =====================
-TITLE
-===================== */
+/* =========================
+   PAGE TITLE
+========================= */
 
 .page-title{
     text-align:center;
@@ -411,142 +411,171 @@ TITLE
 }
 
 .page-title h2{
-    font-size:38px;
+    font-size:40px;
+    font-weight:700;
 }
 
 .title-line{
     width:90px;
     height:4px;
     background:#0a7b3f;
-    margin:12px auto;
+    margin:15px auto 0;
     border-radius:20px;
 }
 
-/* =====================
-CARD PENJELASAN
-===================== */
+/* =========================
+   WRAPPER
+========================= */
 
-.wali-card{
-
+.isbat-wrapper{
     width:95%;
-    max-width:1200px;
-
+    max-width:1300px;
     margin:auto;
-    margin-bottom:30px;
+    margin-bottom:50px;
+}
 
-    background:white;
-
+.isbat-card{
+    background:#fff;
     border-radius:20px;
-
     padding:30px;
+    margin-bottom:25px;
 
     box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
-.wali-grid{
+/* TITLE */
 
+.card-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.card-title span{
+    width:4px;
+    height:28px;
+    background:#0a7b3f;
+    border-radius:10px;
+}
+
+.card-title h3{
+    font-size:28px;
+}
+
+/* =========================
+   SYARAT
+========================= */
+
+.syarat-grid{
     display:grid;
     grid-template-columns:300px 1fr;
-
     gap:30px;
 }
 
-.wali-image img{
-
+.syarat-image img{
     width:100%;
     border-radius:15px;
+    display:block;
 }
 
-.wali-content p{
-
-    line-height:1.9;
-    margin-bottom:18px;
-
-    color:#555;
-}
-
-/* =====================
-URUTAN WALI
-===================== */
-
-.nasab-card{
-
-    width:95%;
-    max-width:1200px;
-
-    margin:auto;
-    margin-bottom:50px;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:30px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
-}
-
-.nasab-header{
-
-    background:#0a7b3f;
-
-    color:white;
-
-    text-align:center;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    margin-bottom:30px;
-}
-
-.nasab-header h3{
-    margin-bottom:5px;
-}
-
-.nasab-grid{
-
+.syarat-list{
     display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:15px 40px;
+    gap:18px;
 }
 
-.nasab-item{
-
+.item{
     display:flex;
-    align-items:center;
-
     gap:12px;
-
-    font-size:15px;
+    align-items:flex-start;
 }
 
-.nasab-item span{
+.item i{
+    color:#0a7b3f;
+    margin-top:3px;
+}
 
-    width:30px;
-    height:30px;
+.item p{
+    line-height:1.7;
+}
+
+/* =========================
+   PROSEDUR
+========================= */
+
+.step-list{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.step-item{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+}
+
+.step-number{
+    width:40px;
+    height:40px;
 
     border-radius:50%;
 
     background:#0a7b3f;
-
     color:white;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
-    font-size:13px;
-    font-weight:bold;
-
-    flex-shrink:0;
+    font-weight:700;
 }
 
-/* =====================
-RESPONSIVE
-===================== */
+.step-item h4{
+    color:#0a7b3f;
+    margin-bottom:5px;
+}
+
+.step-item p{
+    color:#666;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .page-title h2{
+        font-size:28px;
+    }
+
+    .isbat-card{
+        padding:20px;
+    }
+
+    .syarat-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card-title h3{
+        font-size:22px;
+    }
+
+    .step-number{
+        width:36px;
+        height:36px;
+        font-size:14px;
+    }
+
+    .item p,
+    .step-item p{
+        font-size:14px;
+    }
+}
+/* =========================
+   RESPONSIVE
+========================= */
 .mobile-dropdown-btn{
     width:100%;
     background:none;
@@ -575,35 +604,6 @@ RESPONSIVE
 .mobile-dropdown.active .mobile-dropdown-content{
     display:block;
 }
-@media(max-width:768px){
-
-    .page-title h2{
-        font-size:28px;
-    }
-
-    .wali-grid{
-        grid-template-columns:1fr;
-    }
-
-    .nasab-grid{
-        grid-template-columns:1fr;
-    }
-
-    .wali-card,
-    .nasab-card{
-        padding:20px;
-    }
-
-    .wali-content p{
-        font-size:14px;
-        line-height:1.8;
-    }
-
-}
-/* =========================
-   RESPONSIVE
-========================= */
-
 @media(max-width:768px){
 
     body{
@@ -732,14 +732,14 @@ RESPONSIVE
             </a>
 
     <div class="dropdown-menu">
-      <a href="syarat daftar nikah.html">Daftar Nikah</a>
+      <a href="syarat-daftar-nikah.html">Daftar Nikah</a>
       <a href="wakaf.html">Wakaf</a>
-      <a href="isbat nikah.html">Isbat Nikah</a>
-      <a href="wali nikah.html">Wali Nikah</a>
-      <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
-      <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
-      <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
-      <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+      <a href="isbat-nikah.html">Isbat Nikah</a>
+      <a href="wali-nikah.html">Wali Nikah</a>
+      <a href="duplikat-buku-nikah.html">Duplikat Buku Nikah</a>
+      <a href="taukil-bil-kitabah.html">Taukil Bil Kitabah</a>
+      <a href="rekomendasi-nikah.html">Rekomendasi Nikah</a>
+      <a href="pengumuman-nikah.html">Pengumuman Nikah</a>
     </div>
   </div>
 
@@ -819,14 +819,14 @@ RESPONSIVE
         </button>
 
         <div class="mobile-dropdown-content">
-            <a href="syarat daftar nikah.html">Daftar Nikah</a>
+            <a href="syarat-daftar-nikah.html">Daftar Nikah</a>
             <a href="wakaf.html">Wakaf</a>
-            <a href="isbat nikah.html">Isbat Nikah</a>
-            <a href="wali nikah.html">Wali Nikah</a>
-            <a href="duplikat buku nikah.html">Duplikat Buku Nikah</a>
-            <a href="taukil bil kitabah.html">Taukil Bil Kitabah</a>
-            <a href="rekomendasi nikah.html">Rekomendasi Nikah</a>
-            <a href="pengumuman nikah.html">Pengumuman Nikah</a>
+            <a href="isbat-nikah.html">Isbat Nikah</a>
+            <a href="wali-nikah.html">Wali Nikah</a>
+            <a href="duplikat-buku-nikah.html">Duplikat Buku Nikah</a>
+            <a href="taukil-bil-kitabah.html">Taukil Bil Kitabah</a>
+            <a href="rekomendasi-nikah.html">Rekomendasi Nikah</a>
+            <a href="pengumuman-nikah.html">Pengumuman Nikah</a>
         </div>
 
     </div>
@@ -871,93 +871,102 @@ RESPONSIVE
 
 <main>
 <section class="page-title">
-    <h2>Informasi Wali</h2>
+    <h2>Informasi Isbat Nikah</h2>
     <div class="title-line"></div>
 </section>
 
-<!-- PENJELASAN WALI -->
-<section class="wali-card">
+<section class="isbat-wrapper">
 
-    <div class="wali-grid">
+    <!-- CARD PERSYARATAN -->
+    <div class="isbat-card">
 
-        <div class="wali-image">
-            <img src="../assets/img/layanan/Wali-Hakim.jpg" alt="Wali Nikah">
+        <div class="card-title">
+            <span></span>
+            <h3>Persyaratan</h3>
         </div>
 
-        <div class="wali-content">
+        <div class="syarat-grid">
 
-            <p>
-                Wali nikah merupakan orang yang diberi kewenangan untuk menikahkan seorang
-perempuan menurut hukum Islam. Kehadiran wali nikah sangatlah penting karena menjadi
-salah satu syarat sahnya pernikahan dalam syariat. Tanpa adanya wali, akad nikah
-dianggap tidak sah secara agama. Dalam Islam, terdapat ketentuan mengenai urutan wali
-nasab, yaitu wali yang memiliki hubungan darah dengan mempelai perempuan.
-            </p>
+            <div class="syarat-image">
+                <img src="../assets/img/layanan/download.jpg" alt="Isbat Nikah">
+            </div>
 
-            <p>
-Keberadaannya menjadi salah satu rukun penting agar pernikahan sesuai syari'at islam
-dan sah. Peran wali di Indonesia diatur dalam hukum negara melalui UU perkawinan dan
-KHI. Penetapan urutan wali bertujuan untuk menjaga ketertiban dalam syariat Islam serta
-memastikan pernikahan berlangsung sesuai dengan ketentuan hukum agama. Selain itu,
-hal ini berfungsi mencegah terjadinya pernikahan yang tidak sah dan memberikan
-perlindungan bagi pihak perempuan.
-            </p>
+            <div class="syarat-list">
 
-            <p>
-Dalam kondisi tertentu, seperti halnya perempuan yang lahir di luar pernikahan, ayah
-biologis tidak memiliki hak sebagai wali. Oleh karena itu, peran wali digantikan oleh wali
-hakim guna menjamin keabsahan pernikahan menurut hukum Islam dan peraturan negara.
-Jika semua urutan wali nasab itu tidak ada, wali adhal, tidak diketahui keberadaannya,
-tidak ada yang beragama islam atau wali menjadi pengantin itu sendiri, maka barulah wali
-hakim yang menggantikan peran mereka melalui Kantor Urusan Agama (KUA).
-Pemahaman tentang ketentuan ini penting agar pernikahan berjalan sesuai syariat dan
-diakui secara hukum.
-            </p>
+                <div class="item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Dokumen yang telah lengkap untuk pengajuan isbat nikah.</p>
+                </div>
+
+                <div class="item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Putusan Isbat dari Pengadilan Agama.</p>
+                </div>
+
+                <div class="item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Fotokopi KTP, KK dan Akta Kelahiran suami istri.</p>
+                </div>
+
+                <div class="item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Fotokopi KTP wali nikah (jika masih hidup).</p>
+                </div>
+
+                <div class="item">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Pas foto ukuran 2x3 dan 4x6.</p>
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
-</section>
+    <!-- CARD PROSEDUR -->
+    <div class="isbat-card">
 
-<!-- URUTAN WALI -->
-<section class="nasab-card">
+        <div class="card-title">
+            <span></span>
+            <h3>Prosedur</h3>
+        </div>
 
-    <div class="nasab-header">
+        <div class="step-list">
 
-        <h3>Urutan Wali Nasab</h3>
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div>
+                    <h4>Pengajuan Berkas</h4>
+                    <p>Pemohon mengajukan berkas persyaratan ke KUA.</p>
+                </div>
+            </div>
 
-        <small>
-            Berdasarkan PMA No. 30 Tahun 2024 Tentang Pencatatan Pernikahan
-        </small>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div>
+                    <h4>Verifikasi Dokumen</h4>
+                    <p>Petugas memeriksa kelengkapan berkas.</p>
+                </div>
+            </div>
 
-    </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div>
+                    <h4>Pemrosesan & Pencatatan</h4>
+                    <p>Data dicatat dalam sistem administrasi nikah.</p>
+                </div>
+            </div>
 
-    <div class="nasab-grid">
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div>
+                    <h4>Penerbitan Buku Nikah</h4>
+                    <p>Pemohon menerima buku nikah resmi.</p>
+                </div>
+            </div>
 
-        <div class="nasab-item"><span>1</span> Bapak kandung</div>
-        <div class="nasab-item"><span>9</span> Paman sebapak</div>
-
-        <div class="nasab-item"><span>2</span> Kakek dari bapak</div>
-        <div class="nasab-item"><span>10</span> Anak paman sebapak</div>
-
-        <div class="nasab-item"><span>3</span> Buyut dari bapak</div>
-        <div class="nasab-item"><span>11</span> Cucu paman sebapak</div>
-
-        <div class="nasab-item"><span>4</span> Saudara laki-laki kandung</div>
-        <div class="nasab-item"><span>12</span> Paman dari kakek</div>
-
-        <div class="nasab-item"><span>5</span> Saudara laki-laki sebapak</div>
-        <div class="nasab-item"><span>13</span> Anak paman dari kakek</div>
-
-        <div class="nasab-item"><span>6</span> Anak saudara kandung</div>
-        <div class="nasab-item"><span>14</span> Cucu paman dari kakek</div>
-
-        <div class="nasab-item"><span>7</span> Anak saudara sebapak</div>
-        <div class="nasab-item"><span>15</span> Paman buyut</div>
-
-        <div class="nasab-item"><span>8</span> Paman kandung</div>
-        <div class="nasab-item"><span>16</span> Anak paman buyut</div>
+        </div>
 
     </div>
 
